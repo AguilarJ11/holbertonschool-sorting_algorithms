@@ -10,24 +10,26 @@ void insertion_sort_list(listint_t **list)
 
     c_list = (*list)->next;
 
-    while (c_list != NULL)
+    while (c_list)
     {
         aux_list = c_list;
         prev_aux = c_list->prev;
 
-        while (prev_aux != NULL && aux_list->n < prev_aux->n)
+        while (prev_aux && aux_list->n < prev_aux->n)
         {
-            if (aux_list->next != NULL)
+            if (aux_list->next)
                 aux_list->next->prev = prev_aux;
             prev_aux->next = aux_list->next;
             aux_list->next = prev_aux;
             aux_list->prev = prev_aux->prev;
             prev_aux->prev = aux_list;
 
-            if (aux_list->prev != NULL)
+            if (aux_list->prev)
                 aux_list->prev->next = aux_list;
             else
                 *list = aux_list;
+
+	    print_list(*list);
 
             prev_aux = aux_list->prev;
         }
