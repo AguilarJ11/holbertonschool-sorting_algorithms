@@ -1,5 +1,5 @@
 #include "sort.h"
-
+#include <stdio.h>
 /**
  *insertion_sort_list - order a double link list using insertion sort
  *@list: entry pointer of a pointer of an a double linked list
@@ -11,10 +11,14 @@ void insertion_sort_list(listint_t **list)
 
 	c_list = *list;
 
-	for (; c_list->next; )
+	puts("hola");
+
+	while (c_list)
 	{
+		puts("hola");
 		if (c_list->next->n < c_list->n)
 		{
+			puts("Hola");
 			aux_list = c_list->next;
 			c_list->next = aux_list->next;
 			c_list->next->prev = c_list;
