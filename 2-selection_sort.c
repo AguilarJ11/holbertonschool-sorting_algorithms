@@ -20,7 +20,6 @@ void selection_sort(int *array, size_t size)
 			{
 				aux = array[c2];
 				pos = c2;
-				printf("Valor Pos:%i\n", array[c2]);
 			}
 		}
 		if (pos != c1)
